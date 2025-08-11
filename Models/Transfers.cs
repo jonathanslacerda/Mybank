@@ -8,6 +8,10 @@
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; }
 
+        //Relacionamentos
+        public Client Sender { get; set; }
+        public Client Receiver { get; set; }
+
     }
 }
  

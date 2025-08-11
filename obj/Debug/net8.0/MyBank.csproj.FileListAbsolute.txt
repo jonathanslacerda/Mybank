@@ -339,4 +339,3 @@ C:\Users\jonat\Documents\Repositórios\Mybank\obj\Debug\net8.0\refint\MyBank.dll
 C:\Users\jonat\Documents\Repositórios\Mybank\obj\Debug\net8.0\MyBank.pdb
 C:\Users\jonat\Documents\Repositórios\Mybank\obj\Debug\net8.0\MyBank.genruntimeconfig.cache
 C:\Users\jonat\Documents\Repositórios\Mybank\obj\Debug\net8.0\ref\MyBank.dll
-C:\Users\jonat\Documents\Repositórios\Mybank\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -51,6 +51,24 @@ namespace MyBank.Data.Mappings
                 .HasColumnType("DECIMAL")
                 .HasPrecision(18, 2);
 
+            // Relacionamentos
+            builder.HasMany(c => c.Deposits)
+                   .WithOne(d => d.Client)
+                   .HasForeignKey(d => d.ClientId);
+
+            builder.HasMany(c => c.Withdraws)
+                   .WithOne(w => w.Client)
+                   .HasForeignKey(w => w.ClientId);
+
+            builder.HasMany(c => c.SendedTransfers)
+                   .WithOne(t => t.Sender)
+                   .HasForeignKey(t => t.SenderId)
+                   .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasMany(c => c.ReceivedTransfers)
+                   .WithOne(t => t.Receiver)
+                   .HasForeignKey(t => t.ReceiverId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

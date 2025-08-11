@@ -4,12 +4,12 @@ using MyBank.Models;
 
 namespace MyBank.Data.Mappings
 {
-    public class DepositsMap : IEntityTypeConfiguration<Deposits>
+    public class WithdrawsMap : IEntityTypeConfiguration<Withdraws>
     {
-        public void Configure(EntityTypeBuilder<Deposits> builder)
+        public void Configure(EntityTypeBuilder<Withdraws> builder)
         {
             // Table name
-            builder.ToTable("Deposits");
+            builder.ToTable("Withdraws");
 
             // Primary key
             builder.HasKey(x => x.Id);
@@ -34,11 +34,9 @@ namespace MyBank.Data.Mappings
 
             // Relationships
             builder.HasOne(x => x.Client)
-                .WithMany(c => c.Deposits)
+                .WithMany(c => c.Withdraws)
                 .HasForeignKey(x => x.ClientId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-
         }
     }
 }

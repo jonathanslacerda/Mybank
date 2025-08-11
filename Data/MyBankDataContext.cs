@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyBank.Data.Mappings;
 using MyBank.Models;
 
 namespace MyBank.Data
@@ -13,7 +14,16 @@ namespace MyBank.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=mybank; User ID=sa;Password=tZfyn18t");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=mybank; User ID=sa;Password=tZfyn18t;TrustServerCertificate=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ClientMap());
+            modelBuilder.ApplyConfiguration(new DepositsMap());
+            modelBuilder.ApplyConfiguration(new WithdrawsMap());
+            modelBuilder.ApplyConfiguration(new TransfersMap());
+        }
+
     }
 }
