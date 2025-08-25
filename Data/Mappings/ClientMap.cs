@@ -36,7 +36,7 @@ namespace MyBank.Data.Mappings
             builder.Property(x => x.CPF)
                 .IsRequired()
                 .HasColumnName("CPF")
-                .HasColumnType("INT")
+                .HasColumnType("NVARCHAR")
                 .HasMaxLength(11);
 
             builder.Property(x => x.Password)
@@ -49,7 +49,8 @@ namespace MyBank.Data.Mappings
                 .IsRequired()
                 .HasColumnName("Funds")
                 .HasColumnType("DECIMAL")
-                .HasPrecision(18, 2);
+                .HasPrecision(18, 2)
+                .HasDefaultValue(0m);
 
             // Relacionamentos
             builder.HasMany(c => c.Deposits)

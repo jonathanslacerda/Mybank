@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyBank.Data;
 
@@ -11,9 +12,11 @@ using MyBank.Data;
 namespace MyBank.Migrations
 {
     [DbContext(typeof(MyBankDataContext))]
-    partial class MyBankDataContextModelSnapshot : ModelSnapshot
+    [Migration("20250813153430_AddDefaultFunds")]
+    partial class AddDefaultFunds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
